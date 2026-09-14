@@ -1,0 +1,30 @@
+import type { Project } from "@/data/projects";
+
+export type DetailItem = { title: string; text: string };
+export type ArchitectureLayer = { label: string; detail: string };
+export type CaseStudy = {
+  slug: Project["id"];
+  number: string;
+  title: string;
+  subtitle: string;
+  statement: string;
+  description: string;
+  category: string;
+  role: string[];
+  focus: string[];
+  status: string;
+  technologies: string[];
+  visual: Project["visual"];
+  tone: Project["tone"];
+  problem: { heading: string; paragraphs: string[] };
+  idea: { heading: string; text: string; flow: string[] };
+  product: { heading: string; intro: string; areas: DetailItem[] };
+  architecture: { heading: string; intro: string; layers: ArchitectureLayer[] };
+  intelligence?: { heading: string; intro: string; flow: ArchitectureLayer[] };
+  engineering: { heading: string; intro: string; decisions: DetailItem[] };
+  experience: { heading: string; intro: string; principles: DetailItem[] };
+  process: string[];
+  challenges: { heading: string; label: string; items: DetailItem[] };
+  learnings: { heading: string; intro: string; items: DetailItem[] };
+  closing: string;
+};
