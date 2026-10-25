@@ -1,0 +1,9 @@
+.sand-heading-block {margin:18px 0 16px;}
+.sand-heading-stage {--sand-font:clamp(16px,6.5vw,94px);position:relative;width:100%;height:calc(var(--sand-font) * 1.06 + 48px);}
+.disciplines-intro .sand-heading-stage h1 {font-size:var(--sand-font);line-height:1.06;letter-spacing:-.045em;font-weight:900;margin:0;}
+.disciplines-intro .sand-heading-stage .sand-line {display:block;width:max-content;margin-inline:auto;color:#0b0b0b;white-space:nowrap;}
+.sand-heading-stage b {font-weight:inherit;color:#ff6800;}
+.sand-heading-stage canvas {position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;}
+.sand-heading-stage[data-ready="true"][data-static="false"] canvas {opacity:1;}
+.sand-heading-stage[data-ready="true"][data-static="false"] h1 {opacity:0;}
+@media(prefers-reduced-motion:reduce){.sand-heading-stage{height:calc(var(--sand-font) * 1.06);}.sand-heading-stage canvas{display:none!important;}.sand-heading-stage h1{opacity:1!important;}}

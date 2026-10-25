@@ -1,49 +1,60 @@
 # Anchal Sharma — Portfolio
 
-A production-oriented, editorial portfolio foundation for an AI engineer, full-stack developer, and product builder. The frontend includes the complete home experience, a cinematic `/work` archive, reusable case studies, an editorial `/about` portrait, an interactive `/lab`, and a frontend-only `/contact` inquiry experience; it intentionally has no backend, authentication, database, API, or CMS.
+**AI Product Builder · AI Solutions · Product Management**
+
+A personal portfolio presenting independent product work, practical business workflows and the thinking behind each project.
+
+[View live portfolio](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/) · [Resume](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/resume) · [LinkedIn](https://www.linkedin.com/in/anchal-sharma-dev/) · [Email](mailto:anchalsharma1432006@gmail.com)
+
+## Featured work
+
+| Project | Focus | Explore |
+| --- | --- | --- |
+| **NEXORA AI OS** | A local retail workspace connecting customer records, inventory, sales and financial reporting. | [Case study and recorded demo](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/work?project=ai-assisted-development) |
+| **AI Operations Platform** | Enquiry management, human review and controlled internal workflows with traceable execution. | [Case study and recorded demo](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/work?project=e-commerce) |
+| **Personal Portfolio** | Project presentation, professional identity, content structure and clear navigation. | [Case study](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/work?project=client-web-projects) |
+
+## Portfolio experience
+
+- Actual application recordings and screenshots supporting the project case studies.
+- Responsive Work, About, Capabilities, Business and Contact pages.
+- Interactive capability exploration and preserved motion effects.
+- One-page resume preview and PDF download.
+- Contact-form enquiries delivered through the owner-approved FormSubmit service, with sending and failure feedback.
+
+Application recordings use isolated fictional demo records. Recorded demonstrations are distinct from hosted interactive applications.
 
 ## Run locally
+
+Requires Node.js 22.13 or later.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. Use `npm run lint`, `npx tsc --noEmit`, and `npm run build` for validation.
+Use the local URL printed by the development server.
 
-## Architecture
+```bash
+npm test
+npx tsc --noEmit
+```
 
-- `src/app` — App Router entry, global design tokens, metadata, and robots foundation.
-- `src/components/navigation` — responsive fixed navigation.
-- `src/components/home` — the curated Home trailer: identity-led hero, portrait-ready frame, lazy intelligence sculpture, selected proof, capabilities, philosophy, and concise page teasers.
-- `src/components/hero` — original shared hero composition retained for compatible legacy use.
-- `src/components/three` — procedural React Three Fiber intelligence sculpture.
-- `src/components/work` — filterable project archive and its single shared, project-reactive 3D scene.
-- `src/components/case-study` — reusable editorial renderer, accessible architecture interaction, and project-aware hero scene.
-- `src/components/about` — About narrative, image-ready portrait, scroll index, and a single lightweight evolution scene.
-- `src/components/lab` — filterable experiment renderer, accessible AI/system interactions, procedural controls, and one viewport-activated WebGL scene.
-- `src/components/contact` — contact conversion narrative, clipboard feedback, mailto inquiry composer, and a lightweight connection scene.
-- `src/components/sections` — reusable narrative sections and scroll choreography retained for existing experiences.
-- `src/components/ui` — small reusable primitives.
-- `src/components/motion` — smooth scrolling lifecycle.
-- `src/data` — projects, technology, and site/contact content separated from presentation.
+`npm test` builds the static export and checks rendered pages and contact-delivery response handling. The tests use mocked delivery requests and do not email visitors.
 
-## Design system
+## Source guide
 
-The palette, spacing, radii, easing, responsive type, surfaces, and focus styles are CSS custom properties in `src/app/globals.css`. Geist drives interface typography; Instrument Serif supplies the editorial voice. Reusable primitives include `Container`, `SectionLabel`, `ButtonLink`, and `Tag`.
+| Path | Purpose |
+| --- | --- |
+| `app/` | Pages, shared components, project data and preserved interactions |
+| `app/contact/` | Contact form, delivery integration and scoped styles |
+| `public/` | Reviewed public assets and genuine project media |
+| `tests/` | Exported-page and delivery-state checks |
 
-## Motion system
+Built with React, TypeScript, Vinext, GSAP and Three.js. The existing portfolio design, effects and responsive behaviour are preserved.
 
-CSS handles micro-interactions, Motion handles component entry and hover states, GSAP + ScrollTrigger choreographs the philosophy sequence, and Lenis provides restrained smooth scrolling. `prefers-reduced-motion` disables nonessential motion.
+## About Anchal
 
-## 3D system
+B.Tech Computer Science and Engineering student at Rayat Bahra University, Mohali, with expected graduation in **2027**. My independent projects focus on product requirements, connected user journeys, interface clarity and business-led refinement.
 
-The hero sculpture uses procedural React Three Fiber geometry, capped device pixel ratio, limited lighting, no post-processing, subtle pointer response, and slow idle movement. It is client-only and lazy-loaded. A lightweight fallback remains visible while loading or without WebGL.
-
-## Adding content later
-
-Edit `src/data/projects.ts`, `src/data/technologies.ts`, and `src/data/site.ts`. Home-specific capabilities and teaser content live in `src/data/home.ts`; featured project proof continues to come from the shared project records. Public email, social destinations, location, role, and availability are centralized in `site.ts`; replace the explicitly unconfigured GitHub and LinkedIn base URLs there when personal public profiles are ready. About identity, principles, capabilities, exploration areas, and future direction live in `src/data/about.ts`; a future real portrait can be passed to the Home or About `ProfilePortrait` without changing its layout. Lab experiments live in `src/data/lab.ts`; each record selects a reusable interaction mode and filter categories without duplicating the archive presentation. Project records include stable IDs, filters, visual modes, status, and case-study hrefs. Full case-study content lives in `src/data/case-studies`; adding a record there automatically feeds the reusable `src/app/work/[slug]` route, static generation, metadata, section renderer, and previous/next navigation.
-
-### Resume
-
-Place the real document at `public/resume/Anchal-Sharma-Resume.pdf`, then set `resumeAvailable` to `true` in `src/data/site.ts`. The navbar, mobile menu, and Home hero all use the same `resumeUrl`; until the file exists they show an accessible “PDF pending” state instead of linking to a missing or fabricated document.
+For opportunities or product conversations, [get in touch](https://anchal-sharma-portfolio.brownbloom1024.chatgpt.site/contact).

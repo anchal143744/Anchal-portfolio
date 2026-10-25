@@ -1,0 +1,30 @@
+/* Scoped warm-white technology panels; informational tiles are not controls. */
+#technologies {scroll-margin-top:calc(var(--nav-height,72px) + var(--nav-top,14px) + 24px);}
+.disciplines-page #technology-title {font-size:clamp(32px,3.5vw,48px);line-height:1.08;letter-spacing:-.035em;color:#161513;}
+.disciplines-page #technologies .technical-introduction {font-size:17px;line-height:1.65;color:#605b53;margin:0 0 32px;max-width:760px;}
+#technologies .technology-directory {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+#technologies .technology-category {min-width:0;background:#fbf9f4;border:1px solid #ded8ce;border-radius:20px;padding:30px;}
+.disciplines-page #technologies .technology-number {color:#b94c00;font-size:11px;font-weight:650;letter-spacing:.09em;margin-bottom:10px;}
+.disciplines-page #technologies .technology-category h3 {font-size:25px;line-height:1.25;letter-spacing:-.025em;font-weight:700;color:#201e1a;margin-bottom:10px;}
+.disciplines-page #technologies .technology-category-heading>p:last-child {font-size:14px;line-height:1.6;color:#6b645a;}
+#technologies .technology-category-heading {padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #e3ddd3;}
+#technologies .technology-list {list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start;}
+#technologies .technology-entry {display:flex;align-items:center;gap:12px;min-width:0;min-height:76px;padding:12px;background:#f2efe8;border:1px solid #e4ded4;border-radius:12px;transition:background-color 200ms,border-color 200ms,transform 200ms;cursor:default;}
+#technologies .technology-entry:hover {background:#fffdf8;border-color:#c8bdae;transform:translateY(-2px);}
+#technologies .technology-icon {width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;color:#635b4e;}
+#technologies .technology-icon img {width:32px;height:32px;object-fit:contain;}
+#technologies .technology-entry>div {min-width:0;}
+#technologies .technology-name {display:block;font-size:16px;font-weight:600;line-height:1.35;color:#201e1a;}
+#technologies .technology-role {display:block;font-size:12px;line-height:1.45;color:#6b645a;margin-top:4px;}
+.disciplines-page #technologies .technical-note {max-width:900px;font-size:13px;line-height:1.7;color:#655e54;margin:24px 0 0;}
+.toolkit-proof {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border-block:2px solid #c4bbae;padding:28px 0;margin-top:28px;}
+.disciplines-page .toolkit-proof-index {font-size:11px;font-weight:700;color:#b94c00;margin-bottom:10px;}
+.disciplines-page .toolkit-proof h3 {display:flex;align-items:baseline;gap:10px;font-size:18px;line-height:1.3;letter-spacing:-.02em;margin-bottom:10px;}
+.toolkit-proof h3 span {color:#b94c00;}
+.disciplines-page .toolkit-proof article>p:last-child {font-size:14px;line-height:1.65;color:#605b53;}
+
+
+@media(max-width:1050px){#technologies .technology-directory{grid-template-columns:1fr;}#technologies .technology-category{padding:28px;}}
+@media(max-width:700px){.toolkit-proof{grid-template-columns:1fr;gap:24px;}.toolkit-proof article+article{border-top:1px solid #d9d1c6;padding-top:24px;}}
+@media(max-width:540px){#technologies .technology-category{padding:24px;}#technologies .technology-list{grid-template-columns:1fr;}#technologies .technology-entry{min-height:74px;}.disciplines-page #technologies .technology-category h3{font-size:23px;}}
+@media(prefers-reduced-motion:reduce){#technologies .technology-entry{transition:none;}#technologies .technology-entry:hover{transform:none;}}

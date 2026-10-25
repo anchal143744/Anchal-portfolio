@@ -1,0 +1,26 @@
+/* Reserve the extended reveal in flow; its compensating offset reaches zero at release. */
+.hero-overlap { --expertise-height: 124px; --hero-rest: 100px; position: relative; }
+.hero-runway { position: relative; z-index: 0; padding-top: 12px; }
+.hero-hold { position: relative; }
+.home-page .hero-hold .creative-studio {
+  min-height: max(0px, calc(100svh - var(--hero-rest) - var(--expertise-height) - 48px));
+  scroll-margin-top: var(--hero-rest);
+}
+.hero-foreground { position: relative; z-index: 1; display: flow-root; background: var(--home-paper, #f4f1ea); }
+.hero-hold > .studio-expertise {
+  width: min(var(--studio-content-width, 88vw), calc(100% - 40px));
+  margin: 0 auto; padding: 12px 0 24px; color: var(--home-black, #0b0b0b);
+}
+.hero-hold .studio-skills a:focus-visible { outline: 3px solid #aa4500; outline-offset: 4px; }
+.hero-hold .studio-skills a { scroll-margin-top: calc(var(--hero-rest) + 16px); }
+@media(min-width:1001px) and (min-height:700px) and (prefers-reduced-motion:no-preference) {
+  .hero-overlap[data-overlap="true"] > .hero-runway::after { content: ""; display: block; height: var(--hero-travel); }
+  .hero-overlap[data-overlap="true"] .hero-hold { position: sticky; top: var(--hero-rest); }
+  .hero-overlap[data-overlap="true"] > .hero-foreground {
+    margin-top: calc(-1 * var(--hero-height)); transform: translateY(var(--foreground-offset, 0px)); border-radius: 24px 24px 0 0;
+    box-shadow: 0 -12px 30px -20px #32271955;
+  }
+}
+
+/* Projects starts the paper surface; remove its former inter-section lead-in. */
+.home-page .hero-overlap > .hero-foreground > .sw-section { margin-top: 0; padding-top: clamp(32px,4vw,48px); border-radius: inherit; }

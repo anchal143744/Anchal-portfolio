@@ -1,0 +1,4 @@
+/* No fixed demo height, theme overrides, scroll locking, or demo parallax objects. */
+#portfolio-scroll-content {display:flow-root;min-width:0;}
+html[data-portfolio-smooth="true"] {scroll-behavior:auto;}
+[data-smooth-sticky="true"] {position:relative!important;top:0!important;translate:0 var(--smooth-pin-y,0px);}

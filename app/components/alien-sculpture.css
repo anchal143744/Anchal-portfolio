@@ -1,0 +1,9 @@
+.alien-sculpture { width:100%; position:relative; --alien-height:calc(var(--portrait-height,380px) - 44px); }
+.alien-visual { width:100%; height:var(--alien-height); position:relative; isolation:isolate; }
+.alien-canvas,.about-feature-portrait .alien-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; filter:none; }
+.alien-canvas canvas { display:block; width:100%; height:100%; }
+.alien-canvas { z-index:2; opacity:0; cursor:default; }
+.alien-sculpture[data-ready="true"] .alien-canvas { opacity:1; }
+.alien-sculpture[data-ready="true"] .alien-poster { visibility:hidden; }
+.alien-visual .about-feature-ring { width:min(90%,calc(var(--alien-height) * .83)); top:12%; left:50%; translate:-50% 0; transform:none!important; z-index:0; }
+@media(max-width:900px){.alien-sculpture {max-width:400px;margin:auto;} .alien-sculpture {--alien-height:340px;} }

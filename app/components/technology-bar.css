@@ -1,0 +1,19 @@
+.home-page .technology-bar { background: #171717; color: #f4f1ea; width: 100%; border-block: 1px solid #363531; padding: 14px 0 24px; }
+.technology-heading { max-width: 1480px; padding-inline: var(--home-side,24px); margin: 0 auto 12px; display: flex; gap: 16px; align-items: center; justify-content: center; text-align: center; }
+.home-page .technology-heading h2 { margin: 0; font-size: 11px; line-height: 1.5; letter-spacing: .15em; font-weight: 750; text-transform: uppercase; }
+.technology-viewport { overflow: hidden; }
+.technology-track { display: flex; }
+.technology-list { display: flex; flex-wrap: wrap; gap: 12px 28px; list-style: none; padding: 0 24px; margin: 0; width: 100%; flex-shrink: 0; }
+.technology-list li { display: flex; align-items: center; gap: 28px; white-space: nowrap; font-size: clamp(20px,2vw,28px); line-height: 1.35; font-weight: 650; }
+.technology-list li span { color: #ff6a00; }
+.technology-list[aria-hidden="true"] { display: none; }
+.technology-bar[data-animated="true"] .technology-list { width: max-content; min-width: 100vw; flex-wrap: nowrap; justify-content: space-around; gap: 0; padding: 0; }
+.technology-bar[data-animated="true"] .technology-list li { padding-right: 32px; gap: 32px; }
+.technology-bar[data-animated="true"] .technology-list[aria-hidden="true"] { display: flex; }
+@media(max-width:600px) { .technology-list li { font-size: 20px; } .technology-heading { gap: 10px; } }
+@media(prefers-reduced-motion:reduce) {
+ .technology-bar .technology-track { transform: none !important; }
+ .technology-bar[data-animated="true"] .technology-list { width: 100%; min-width: 0; flex-wrap: wrap; justify-content: flex-start; gap: 12px 24px; padding: 0 24px; }
+ .technology-bar[data-animated="true"] .technology-list[aria-hidden="true"] { display: none; }
+ .technology-heading { margin-bottom: 18px; }
+}

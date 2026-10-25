@@ -1,0 +1,241 @@
+@font-face {
+  font-family: "Caveat Signature";
+  src: url("/fonts/caveat.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+/* Only the Home hero uses this editorial composition. */
+body:has(.editorial-hero) { background: var(--home-paper); }
+.home-page .editorial-hero {
+  container-type: inline-size;
+  width: calc(100% - 2 * var(--home-side));
+  max-width: clamp(900px, calc(200svh - 480px), 1380px);
+  margin: 0 auto;
+  padding: clamp(20px, 3svh, 36px) 0 clamp(24px, 4svh, 48px);
+  color: var(--home-black);
+  background: var(--home-paper);
+}
+.editorial-top {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+}
+.editorial-portrait {
+  position: relative;
+  height: clamp(180px, 28svh, 320px);
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 48% 45%, #393939, #171717 75%);
+}
+.editorial-portrait img {
+  position: absolute;
+  top: 4%;
+  left: 47%;
+  height: 215%;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}
+.editorial-statement {
+  margin: 0;
+  font-size: clamp(22px, 3.3cqw, 44px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+  font-weight: 450;
+  text-transform: uppercase;
+  text-align: right;
+}
+.editorial-statement > span { display: block; }
+.home-page .editorial-name {
+  position: relative;
+  margin: clamp(16px, 2.5svh, 28px) 0 clamp(24px, 3.5svh, 36px);
+  padding: 0;
+  font-size: 23cqw;
+  line-height: .83;
+  letter-spacing: -.075em;
+  font-weight: 950;
+  color: var(--home-black);
+  text-transform: none;
+}
+.editorial-wordmark { display: block; white-space: nowrap; }
+.editorial-signature {
+  position: absolute;
+  left: 44%;
+  top: 5%;
+  color: var(--home-orange);
+  font-family: "Caveat Signature", cursive;
+  font-size: .66em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.065em;
+  transform: rotate(-12deg);
+}
+.editorial-expertise { margin-top: 8px; }
+.home-page .editorial-expertise h2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.editorial-expertise h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--home-divider);
+}
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0 0 20px;
+  list-style: none;
+  border-bottom: 1px solid var(--home-divider);
+}
+.expertise-grid li { min-width: 0; padding: 0 clamp(12px, 1.8cqw, 25px); }
+.expertise-grid li + li { border-left: 1px solid var(--home-divider); }
+.expertise-number { display: block; color: var(--home-orange); font-size: 20px; font-weight: 650; margin-bottom: 8px; }
+.home-page .expertise-grid h3 {
+  margin: 0;
+  color: var(--home-black);
+  font-size: clamp(24px, 3cqw, 42px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  text-transform: none;
+  overflow-wrap: normal;
+}
+.editorial-actions { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 32px; margin-top: 28px; }
+.editorial-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 52px;
+  color: var(--home-black);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.editorial-button { padding: 16px 24px; border-radius: 4px; background: var(--home-orange); }
+.editorial-button:hover { background: #e95e00; }
+.editorial-contact { border-bottom: 1px solid var(--home-black); }
+.editorial-contact:hover { border-color: var(--home-orange); }
+.editorial-hero a:focus-visible { outline: 3px solid var(--home-black); outline-offset: 5px; }
+.editorial-hero .hero-socials { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+.editorial-hero .hero-socials a { display: inline-flex; gap: 8px; color: inherit; }
+.editorial-hero .hero-socials svg { width: 18px; height: 18px; }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .editorial-portrait { height: clamp(190px, 25vw, 250px); }
+  .editorial-actions { gap: 16px; }
+  .editorial-actions a { gap: 12px; font-size: 14px; }
+  .editorial-button { padding-inline: 18px; }
+}
+@media (max-width: 760px) {
+  .home-page .editorial-hero { max-width: 560px; padding-top: 20px; padding-bottom: 28px; }
+  .editorial-top { grid-template-columns: 1fr; gap: 18px; }
+  .editorial-portrait { height: auto; aspect-ratio: 2.1; }
+  .editorial-statement { font-size: clamp(22px, 5.5vw, 32px); text-align: left; }
+  .editorial-statement > span { display: inline; }
+  .editorial-statement > span::after { content: " "; }
+  .home-page .editorial-name { margin-top: 24px; margin-bottom: 26px; }
+  .editorial-signature { top: 13%; left: 46%; font-size: .63em; }
+  .editorial-actions { gap: 16px; width: 100%; }
+  .editorial-actions a { font-size: 14px; gap: 12px; min-height: 48px; }
+  .editorial-button { padding: 14px 18px; }
+}
+@media (max-width: 1000px) {
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 24px; }
+  .expertise-grid li:nth-child(3) { border-left: 0; }
+  .home-page .expertise-grid h3 { font-size: clamp(26px, 4cqw, 36px); }
+}
+@media (max-width: 480px) {
+  .expertise-grid { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; }
+  .expertise-grid li { padding: 16px 0; }
+  .expertise-grid li + li { border-left: 0; border-top: 1px solid var(--home-divider); }
+  .home-page .expertise-grid h3 { font-size: 28px; }
+  .expertise-number { font-size: 16px; margin-bottom: 6px; }
+  .home-page .editorial-expertise h2 { margin-bottom: 0; }
+}
+@media (max-width: 380px) {
+  .editorial-actions { gap: 12px; }
+  .editorial-actions a { gap: 8px; }
+  .editorial-button { padding-inline: 12px; }
+}
+/* The orange HTML signature remains visible; only this identical,
+   decorative text layer clips the moving highlight to the glyphs. */
+.editorial-wordmark { overflow: hidden; padding-block: .06em; margin-block: -.06em; }
+.editorial-wordmark > span {
+  display: block;
+  animation: editorial-name-rise 650ms cubic-bezier(.2,.7,.2,1) 100ms both;
+}
+.editorial-portrait, .editorial-statement {
+  animation: editorial-arrive 500ms ease-out both;
+}
+.editorial-statement { animation-delay: 100ms; }
+.editorial-expertise, .editorial-actions {
+  animation: editorial-arrive 450ms ease-out 350ms both;
+}
+.signature-sweep { display: none; }
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .signature-sweep {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(100deg, transparent 46%, #ffa044 50%, transparent 54%);
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: signature-highlight 8s linear 850ms infinite both;
+  }
+}
+.hero-motion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  margin: 8px 0 -16px auto;
+  padding: 6px 0 6px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--home-muted-light);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.hero-motion-toggle:hover { color: var(--home-black); }
+.hero-motion-toggle:focus-visible { outline: 2px solid var(--home-black); outline-offset: 3px; }
+body.is-hero-out .signature-sweep,
+body.is-motion-paused .signature-sweep,
+.editorial-hero[data-motion-paused="true"] .signature-sweep { animation-play-state: paused; }
+@keyframes editorial-name-rise {
+  from { transform: translateY(115%); }
+  to { transform: translateY(0); }
+}
+@keyframes editorial-arrive {
+  from { opacity: .01; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes signature-highlight {
+  0% { background-position: 100% 0; }
+  18.75%, 100% { background-position: 0% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signature-sweep, .hero-motion-toggle { display: none; }
+  .editorial-hero *, .editorial-hero *::before, .editorial-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

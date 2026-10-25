@@ -1,0 +1,7 @@
+# Sand heading
+
+Adapted from the Canvas 2D simulation supplied by the portfolio owner, credited to Dustin Dwayne: https://codepen.io/dustindwayne/pen/qEqzrzo. The supplied source implements edge-weighted grain release, gravity/drift, cellular pile settling and cubic staggered reformation. This adaptation preserves those behaviors while using a bounded 60 Hz timestep, a capped particle budget, occupied-cell iteration and a component-sized multiline font mask. No remote demo assets or dependencies are loaded.
+
+Adjust `sandSettings` in `SandHeading.tsx`: grain sizes, particle cap, colours, gravity, release attempts/probability, drag, settling passes, readable hold, pile hold and reformation timing. `secondaryMessage` is intentionally empty. Adjust `--sand-font` and the reserved fall area in `sand-heading.css` for heading size/stage spacing. Font is inherited from the actual heading; canvas measures its lines after fonts load, preserving the orange final period.
+
+The first visit starts with grains rising from a seeded pile. Subsequent cycles hold, collapse, settle and reform. The heading is a single responsive line; no pause/resume button is shown. Reduced motion shows static text. Offscreen/hidden-tab suspension preserves simulation time without catch-up. Width changes rebuild after 160 ms; height-only browser toolbar changes don't reset the stage. Canvas failure leaves HTML visible. An opacity blend after grains finish arriving restores the smooth font edges without a hard swap.

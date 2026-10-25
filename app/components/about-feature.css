@@ -1,0 +1,52 @@
+.home-page .about-feature { width: 100%; background: #f4f1ea; color: #0b0b0b; padding: clamp(48px,6vw,88px) 0; scroll-margin-top: calc(var(--nav-clearance, 100px) + 20px); }
+.about-feature-inner { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 var(--home-side, 24px); }
+.about-feature-heading { text-align: center; margin: 0 auto 36px; }
+.about-feature-eyebrow { margin: 0 0 16px; color: #0b0b0b; font-size: 12px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+.home-page .about-feature h2 { margin: 0; color: #0b0b0b; font-size: clamp(34px,4.5vw,64px); line-height: 1.02; letter-spacing: -.04em; font-weight: 900; text-transform: uppercase; }
+.about-feature-composition { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr); gap: clamp(24px,3vw,48px); align-items: center; }
+.about-feature-portrait { grid-column: 2; grid-row: 1; position: relative; isolation: isolate; display: grid; place-items: center; min-width: 0; }
+.about-feature-portrait img { position: relative; z-index: 1; display: block; width: auto; height: clamp(460px,44vw,620px); max-width: 100%; object-fit: contain; filter: drop-shadow(0 14px 20px #0003); }
+.about-feature-ring { position: absolute; width: min(96%, 440px); aspect-ratio: 1; border: 1.5px solid #ff6a00; border-radius: 50%; top: 20%; pointer-events: none; }
+.about-feature-background { grid-column: 1; grid-row: 1; }
+.about-feature-approach { grid-column: 3; grid-row: 1; }
+.about-feature-note { max-width: 32ch; }
+.about-feature-note h3 { margin: 0 0 18px; color: #a44100; font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.about-feature-note p { margin: 0; color: #57554f; font-size: 16px; line-height: 1.75; }
+.about-feature-link { display: flex; width: fit-content; align-items: center; gap: 18px; min-height: 44px; margin: 30px auto 0; padding: 8px 0; border-bottom: 1px solid #ff6a00; color: #0b0b0b; font-size: 14px; font-weight: 750; text-decoration: none; }
+.about-feature-link span { font-size: 22px; transition: transform .18s ease-out; }
+.about-feature-link:is(:hover,:focus-visible) span { transform: translate(3px,-3px); }
+.about-feature-link:focus-visible { outline: 3px solid #a44100; outline-offset: 6px; }
+@media(max-width:900px) {
+ .about-feature-heading { margin-bottom: 28px; }
+ .about-feature-composition { grid-template-columns: minmax(0,1fr); gap: 32px; }
+ .about-feature-portrait,.about-feature-background,.about-feature-approach { grid-column: 1; grid-row: auto; }
+ .about-feature-portrait { width: min(100%,420px); margin: 0 auto; }
+ .about-feature-portrait img { height: auto; width: min(100%,290px); }
+ .about-feature-ring { width: 88%; top: 27%; }
+ .about-feature-note { width: 100%; max-width: 52ch; margin: 0 auto; }
+ .about-feature-note h3 { margin-bottom: 12px; }
+ .about-feature-link { margin-top: 32px; }
+}
+@media(prefers-reduced-motion:reduce) { .about-feature-ring { transform: none !important; } .about-feature-link span { transition: none; transform: none !important; } }
+
+.about-feature-facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 0; list-style: none; padding: 24px 0 0; margin: 26px auto 0; border-top: 1px solid #d9d4c9; width: fit-content; max-width: 100%; }
+.about-feature-facts li { padding: 0 22px; color: #0b0b0b; font-size: 14px; line-height: 1.5; }
+.about-feature-facts li + li { border-left: 1px solid #d9d4c9; }
+@media(max-width:600px) { .about-feature-facts { gap: 12px; } .about-feature-facts li { padding: 0 10px; } .about-feature-facts li + li { border: 0; } }
+
+/* Fit the complete desktop feature below the fixed navigation, without clipping. */
+@media (min-width: 901px) {
+ .home-page .about-feature { padding-block: 36px; }
+ .about-feature-heading { margin-bottom: 12px; }
+ .about-feature-eyebrow { margin-bottom: 10px; }
+ .home-page .about-feature h2 { font-size: clamp(36px, 5svh, 48px); }
+ .about-feature-composition { grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: clamp(24px,3vw,44px); }
+ .about-feature-portrait { --portrait-height: clamp(240px, calc(100svh - var(--nav-clearance, 118px) - 300px), 460px); }
+ .about-feature-portrait img { height: var(--portrait-height); }
+ .about-feature-ring { width: min(92%, calc(var(--portrait-height) * .72)); top: 22%; }
+ .about-feature-note { max-width: 38ch; }
+ .about-feature-note h3 { margin-bottom: 12px; }
+ .about-feature-note p { line-height: 1.6; }
+ .about-feature-facts { margin-top: 12px; padding-top: 12px; }
+ .about-feature-link { min-height: 44px; margin-top: 12px; padding-block: 5px; }
+}

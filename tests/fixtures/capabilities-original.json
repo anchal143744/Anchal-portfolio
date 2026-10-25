@@ -1,0 +1,185 @@
+{
+  "coreAreas": [
+    {
+      "number": "01",
+      "title": "AI-Powered Development",
+      "line": "Turning ideas into working digital experiences with AI.",
+      "description": "I use AI-assisted development to create responsive websites, landing pages, small applications, tools and prototypes. AI is an important part of my workflow — helping me plan solutions, generate and understand code, debug problems, improve interfaces and move from an idea to a working result faster.",
+      "items": [
+        "AI-Assisted Web Development",
+        "Website Development",
+        "Landing Page Development",
+        "Small Web Applications",
+        "Responsive Interfaces",
+        "Rapid Prototyping",
+        "AI-Assisted Coding",
+        "AI-Assisted Debugging",
+        "Prompt Engineering",
+        "Basic API Integration",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP Fundamentals",
+        "MySQL Fundamentals"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "E-Commerce",
+      "line": "I understand both how an online store looks and how it operates.",
+      "description": "I have hands-on experience with e-commerce and Shopify, including store setup, customization, product management, inventory, presentation and day-to-day store operations.",
+      "items": [
+        "Shopify",
+        "Shopify Store Setup",
+        "Store Customization",
+        "Store Design",
+        "Product Management",
+        "Inventory Management",
+        "Product Presentation",
+        "E-Commerce Operations",
+        "Store UI/UX",
+        "Customer Experience",
+        "E-Commerce Optimization"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Creative Design & Media",
+      "line": "Ideas made visual.",
+      "description": "I create visual content across digital design, graphics, promotional materials, landing pages and video. I enjoy taking an idea or message and transforming it into visuals that communicate clearly and grab attention.",
+      "items": [
+        "Graphic Design",
+        "Poster Design",
+        "Promotional Creatives",
+        "Social Media Posts",
+        "Landing Page Design",
+        "Website Visuals",
+        "Thumbnail Design",
+        "Video Editing",
+        "Song / Music Video Creation",
+        "Reels & Short-Form Content",
+        "Color Grading",
+        "Digital Content Creation",
+        "Visual Design",
+        "Brand-Oriented Creatives",
+        "Adobe Photoshop",
+        "Canva"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Business & Entrepreneurship",
+      "line": "I don't only create for businesses. I understand what it takes to run one.",
+      "description": "Alongside my digital work, I have hands-on experience running businesses in flex printing and clothing. This experience has helped me understand the practical side of business — working with customers, handling products, managing design requirements, production, sales and day-to-day operations.",
+      "items": [
+        "Flex Printing Business",
+        "Clothing Business",
+        "Business Operations",
+        "Customer Communication",
+        "Sales",
+        "Product Handling",
+        "Production",
+        "Design Requirements",
+        "Customer-Focused Problem Solving",
+        "Day-to-Day Business Management"
+      ]
+    }
+  ],
+  "toolkit": [
+    {
+      "title": "Development & AI",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "AI-Assisted Development",
+        "Responsive Web Design",
+        "Small Web Applications",
+        "Landing Pages",
+        "Prompt Engineering",
+        "AI-Assisted Debugging",
+        "Rapid Prototyping",
+        "Basic APIs",
+        "PHP Fundamentals",
+        "MySQL Fundamentals"
+      ]
+    },
+    {
+      "title": "E-Commerce",
+      "items": [
+        "Shopify",
+        "Shopify Store Setup",
+        "Shopify Customization",
+        "Store Design",
+        "Product Management",
+        "Inventory Management",
+        "E-Commerce Operations",
+        "Product Presentation",
+        "Store UI/UX"
+      ]
+    },
+    {
+      "title": "Design & Creative",
+      "items": [
+        "Graphic Design",
+        "Photoshop",
+        "Canva",
+        "Poster Design",
+        "Social Media Creatives",
+        "Landing Page Design",
+        "Video Editing",
+        "Song / Music Videos",
+        "Reels",
+        "Thumbnail Design",
+        "Color Grading",
+        "Content Creation"
+      ]
+    },
+    {
+      "title": "Business & Productivity",
+      "items": [
+        "Business Operations",
+        "Flex Printing",
+        "Clothing",
+        "Sales",
+        "Customer Communication",
+        "Production",
+        "Product Management",
+        "Practical Problem Solving",
+        "Microsoft Excel",
+        "Microsoft Word",
+        "Microsoft PowerPoint",
+        "Documentation",
+        "Spreadsheets",
+        "Presentations"
+      ]
+    }
+  ],
+  "process": [
+    [
+      "01",
+      "Idea",
+      "Understand the problem and define what needs to be built."
+    ],
+    [
+      "02",
+      "Design",
+      "Plan the experience, structure and visual direction."
+    ],
+    [
+      "03",
+      "Build With AI",
+      "Use AI-assisted development and modern tools to turn the concept into a working product."
+    ],
+    [
+      "04",
+      "Test",
+      "Check functionality, responsiveness and usability."
+    ],
+    [
+      "05",
+      "Improve",
+      "Refine the design, functionality and overall experience."
+    ]
+  ]
+}

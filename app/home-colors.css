@@ -1,0 +1,326 @@
+/* Route-scoped tokens: shared navigation and footer inherit these only on Home. */
+body:has(.home-page) {
+  --home-black: #0B0B0B;
+  --home-paper: #F4F1EA;
+  --home-card: #171717;
+  --home-orange: #FF6A00;
+  --home-muted-light: #55514B;
+  --home-muted-dark: #B8B5AE;
+  --home-divider: #D9D4C9;
+  --portfolio-black: var(--home-black);
+  --portfolio-panel: var(--home-card);
+  --portfolio-cream: var(--home-paper);
+  --portfolio-muted: var(--home-muted-dark);
+  --portfolio-orange: var(--home-orange);
+  --orange: var(--home-orange);
+  background: var(--home-black);
+}
+
+/* An opaque paper canvas fills the gutters and the spaces between sections.
+   Only the hero paints a full-width dark background over it. */
+.home-page {
+  background: var(--home-paper);
+  color: var(--home-black);
+}
+.home-page::before { background: none; }
+/* Paint the hero itself: no viewport-width pseudo element or exposed gutters. */
+.home-page .home-hero {
+  isolation: isolate;
+  color: var(--home-paper);
+  max-width: none;
+  width: 100%;
+  margin-inline: 0;
+  height: auto;
+  min-height: max(720px, 100svh);
+  padding-inline: max(var(--home-side), calc((100% - 1336px) / 2));
+  background:
+    linear-gradient(90deg, #f4f1ea08 1px, transparent 1px),
+    linear-gradient(#f4f1ea06 1px, transparent 1px),
+    var(--home-black);
+  background-size: 72px 72px;
+}
+.home-page .home-hero::before,
+.home-page .home-hero::after { content: none; }
+.home-page .home-hero h1,
+.home-page .home-hero h1 span,
+.home-page .home-hero-intro { color: var(--home-paper); }
+.home-page .home-hero .home-eyebrow { color: var(--home-orange); }
+.home-page .home-button.primary {
+  color: var(--home-black);
+  background: var(--home-orange);
+}
+.home-page .home-button.primary:hover { background: var(--home-paper); color: var(--home-black); }
+.home-page .home-hero .home-button.secondary { color: var(--home-paper); border-color: #f4f1ea55; }
+.home-page .home-hero .home-button.secondary:hover { border-color: var(--home-orange); }
+
+/* Light project heading; fully opaque, dark stacked surfaces. */
+.home-page .sw-section,
+.home-page .sw-heading,
+.home-page .sw-section[data-stacked="true"] .sw-heading {
+  background: var(--home-paper);
+  color: var(--home-black);
+}
+.home-page .sw-heading { border-color: var(--home-divider); }
+.home-page .sw-eyebrow,
+.home-page .sw-heading h2,
+.home-page .sw-all,
+.home-page .sw-all span { color: var(--home-black); }
+.home-page .sw-all { border-color: var(--home-orange); }
+.home-page .sw-card,
+.home-page .sw-artwork {
+  background: var(--home-card);
+  color: var(--home-paper);
+}
+.home-page .sw-card {
+  border-color: #f4f1ea30;
+  box-shadow: 0 -5px 20px #0b0b0b24, 0 14px 36px #0b0b0b12;
+}
+.home-page .sw-section[data-stacked="true"] .sw-card {
+  box-shadow: 0 -5px 20px #0b0b0b24, 0 14px 36px #0b0b0b12;
+}
+.home-page .sw-copy h3,
+.home-page .sw-case { color: var(--home-paper); }
+.home-page .sw-description,
+.home-page .sw-tags li { color: var(--home-muted-dark); }
+.home-page .sw-tags li { border-color: #f4f1ea35; }
+.home-page .sw-number { color: var(--home-muted-dark); }
+.home-page .sw-category,
+.home-page .sw-case > span:first-child { color: var(--home-orange); }
+.home-page .sw-case { border-color: var(--home-orange); }
+
+/* Existing middle layouts keep their spacing and motion. */
+.home-page :is(.capability-overview, .experience-section, .about-preview, .home-final-slide) {
+  background: var(--home-paper);
+  color: var(--home-black);
+}
+.home-page :is(.capability-overview, .experience-section, .about-preview) {
+  border-top: 1px solid var(--home-divider);
+}
+.home-page :is(.section-heading h2, .section-heading p, .capability-card h3,
+  .experience-panel h3, .experience-panel > span, .about-preview-copy h2,
+  .about-preview-copy .home-eyebrow, .contact-cta h2, .contact-cta .home-eyebrow) {
+  color: var(--home-black);
+}
+.home-page :is(.capability-card p, .experience-panel p, .about-preview-copy p, .contact-cta p) {
+  color: var(--home-muted-light);
+}
+.home-page :is(.capability-card, .experience-panel) {
+  background: var(--home-paper);
+  border-color: var(--home-divider);
+}
+.home-page .capability-card:hover { border-color: var(--home-muted-light); }
+.home-page :is(.capability-card li, .experience-panel small, .experience-connector b) {
+  color: var(--home-black);
+  background: var(--home-paper);
+  border-color: var(--home-divider);
+}
+.home-page .capability-object {
+  background: var(--home-paper);
+  border-color: var(--home-divider);
+}
+.home-page .capability-object span { background: var(--home-black); }
+.home-page .capability-object span:nth-child(2) { background: var(--home-orange); }
+.home-page .capability-object[data-object="commerce"] { background: var(--home-orange); }
+.home-page .capability-object[data-object="commerce"] span { background: var(--home-black); }
+.home-page .about-preview-visual {
+  background: var(--home-paper);
+  border-color: var(--home-divider);
+  box-shadow: 0 18px 48px #0b0b0b14;
+}
+.home-page .about-preview-visual span { background: var(--home-black); color: var(--home-paper); }
+.home-page .about-preview-copy a { color: var(--home-black); border-color: var(--home-orange); }
+.home-page .about-preview-copy a:hover { color: var(--home-muted-light); }
+.home-page .contact-cta { background: var(--home-paper); border-color: var(--home-divider); }
+.home-page .contact-cta::before { background: none; }
+.home-page .contact-cta .home-button.primary:hover { background: var(--home-black); color: var(--home-paper); }
+.home-page .contact-portal strong { color: var(--home-black); }
+
+/* Floating navigation and the complete footer remain dark. */
+body:has(.home-page) .site-header,
+body:has(.home-page) .site-nav,
+body:has(.home-page) .footer-reveal,
+body:has(.home-page) .footer-reveal .site-footer {
+  background: var(--home-black);
+  color: var(--home-paper);
+}
+body:has(.home-page) .site-nav a { color: var(--home-paper); }
+body:has(.home-page) .site-nav a::after { background: var(--home-orange); }
+body:has(.home-page) .footer-left h2 { color: var(--home-paper); }
+body:has(.home-page) :is(.footer-right p, .footer-contact-link, .footer-meta) { color: var(--home-muted-dark); }
+body:has(.home-page) .footer-label { color: var(--home-orange); }
+body:has(.home-page) .footer-cta { background: var(--home-orange); color: var(--home-black); }
+body:has(.home-page) .footer-cta:hover { background: var(--home-paper); color: var(--home-black); }
+body:has(.home-page) .footer-contact-link:hover { color: var(--home-paper); }
+body:has(.home-page) .footer-signature { color: #f4f1ea21; }
+body:has(.home-page) .footer-signature span { color: #ff6a009e; }
+body:has(.home-page) .footer-signature .footer-name-first { color: inherit; }
+
+/* Contrasting focus rings for each surface, including orange-filled buttons. */
+.home-page :focus-visible { outline: 3px solid var(--home-black); outline-offset: 4px; }
+.home-page .home-hero :focus-visible,
+.home-page .sw-card :focus-visible,
+body:has(.home-page) .site-header :focus-visible,
+body:has(.home-page) .site-footer :focus-visible {
+  outline: 3px solid var(--home-paper);
+  outline-offset: 4px;
+}
+
+/* One responsive content grid across the paper sections. Backgrounds belong to
+   the page/slide, while these containers only constrain readable content. */
+.home-page {
+  --home-side: clamp(20px, 4vw, 72px);
+  --home-section-space: clamp(48px, 6vw, 96px);
+}
+.home-page :is(.sw-section, .capability-overview, .experience-section, .about-preview) {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: var(--home-side);
+  padding-block: var(--home-section-space);
+}
+.home-page .sw-section[data-stacked="true"] {
+  margin-top: 0;
+  padding-top: var(--home-section-space);
+}
+.home-page .home-final-slide {
+  margin-top: 0;
+  padding-top: 0;
+  background: var(--home-paper);
+  display: flow-root;
+}
+.home-page .contact-cta {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  border-inline: 0;
+  border-bottom: 0;
+  padding-inline: max(var(--home-side), calc((100% - 1336px) / 2));
+  padding-block: var(--home-section-space);
+}
+.home-page .about-preview-visual {
+  width: 100%;
+  min-height: 0;
+  max-width: 560px;
+  justify-self: center;
+}
+.home-page .section-heading h2,
+.home-page .about-preview-copy h2,
+.home-page .contact-cta h2 { font-size: clamp(2rem, 3.4vw, 3.2rem); }
+.home-page .sw-heading { padding-top: 16px; }
+.home-page .sw-section[data-keyboard="true"] .sw-heading { position: relative; top: auto; }
+
+@media (min-width: 768px) and (max-height: 759px) {
+  .home-page .sw-card { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .home-page .sw-artwork { border-radius: 0 22px 22px 0; }
+  .home-page .sw-artwork :is(img, video) { max-height: 440px; }
+}
+@media (min-width: 981px) and (max-width: 1180px) {
+  .home-page .home-hero { gap: 24px; }
+  .home-page .home-hero h1 { font-size: clamp(3rem, 5vw, 3.8rem); }
+}
+@media (max-width: 980px) {
+  .home-page .home-hero { min-height: 0; padding-bottom: 48px; }
+  .home-page .home-hero h1 { font-size: clamp(2.6rem, 7.5vw, 4.5rem); }
+  .home-page .home-hero-copy { max-width: 760px; }
+  .home-page .about-preview { gap: 32px; }
+  .home-page .contact-portal { width: min(100%, 460px); min-height: 0; justify-self: center; }
+}
+@media (max-width: 620px) {
+  .home-page { --home-side: 20px; }
+  .home-page .home-hero h1 { font-size: clamp(2.25rem, 11.2vw, 3.25rem); }
+  .home-page .home-hero-actions { gap: 12px; }
+  .home-page .home-collage { max-width: 100%; }
+  .home-page .capability-card { min-height: 0; }
+  .home-page .contact-cta { gap: 24px; }
+  .home-page .sw-copy { padding: 22px; }
+  .home-page .sw-artwork { padding: 16px; }
+}
+@media (min-width: 981px) {
+  /* Reserve room for the collage's perspective projection at the right edge. */
+  .home-page .home-collage { width: 92%; justify-self: start; }
+  .home-page .collage-commerce { right: 6%; }
+  .home-page .collage-web { left: 0; }
+  .home-page .collage-wireframe { left: 3%; }
+}
+
+/* Identical grid cells align the text and its decorative color overlay. */
+.home-page .hero-role-group {
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--home-black);
+  color: var(--home-paper);
+  cursor: default;
+}
+.home-page .hero-role-layer {
+  grid-area: 1 / 1;
+  min-width: 0;
+  padding: 14px 16px;
+}
+.home-page .hero-role-fill {
+  background: var(--home-orange);
+  color: var(--home-black);
+  pointer-events: none;
+  user-select: none;
+  animation: hero-role-loading 4.2s ease-in-out infinite;
+}
+.home-page .hero-role-badge {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 850;
+  line-height: 1.25;
+}
+.home-page .hero-supporting-roles {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  row-gap: 2px;
+  margin: 8px 0 0;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.home-page .hero-supporting-roles span { white-space: nowrap; }
+.home-page .hero-role-group + h1 { margin-top: 0; }
+/* Fill for 2.5s, hold for 0.8s, then retract for 0.9s. Matching endpoints
+   avoid a flashing opacity reset; both text colors follow the same edge. */
+@keyframes hero-role-loading {
+  0%, 100% { clip-path: inset(0 100% 0 0); }
+  59.524%, 78.571% { clip-path: inset(0 0 0 0); }
+}
+@media (max-width: 620px) {
+  .home-page .hero-role-group { margin-bottom: 20px; }
+  .home-page .hero-role-layer { padding: 12px 13px; }
+  .home-page .hero-role-badge { font-size: 16px; }
+  .home-page .hero-supporting-roles { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-role-fill { animation: none; clip-path: none; opacity: 1; }
+}
+
+/* The replacement portrait includes its own background: fill the frame rather
+   than letterboxing it inside the previous transparent-portrait padding. */
+.home-page .collage-portrait {
+  aspect-ratio: 1414 / 2000;
+  height: auto;
+  overflow: hidden;
+}
+.home-page .collage-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 980px) {
+  /* Keep the portrait above decorative cards when the collage becomes compact. */
+  .home-page .home-collage { transform-style: flat; }
+}
